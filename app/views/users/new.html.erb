@@ -1,1 +1,14 @@
-<h1>sign up page</h1>
+<h1>Sign Up</h1>
+<div>
+    <%= form_for @user do |f| %>
+        <%= f.text_field :username, placeholder: "Enter a Username" %> <br>
+        <%= f.text_field :email, placeholder: "Email Address" %> <br>
+        <%= f.text_field :concentration, placeholder: "Enter your field of study, industry or something you are currently working on..." %> <br>
+        <%= f.password_field :password, placeholder: "Choose a password"%> <br>
+        <%= f.submit %>
+    <% end %>
+</div>
+<p> Note for later - remember to consider other available database fields, i.e. image </p>
+<p> Note for later - remember to add an admin function that will require some invite code or passphrase </p>
+<p> Note for later - add a passwords must match field if possible </p>
+<p> Remeber to limit characters and ensure unique username and email </p>
