@@ -19,19 +19,22 @@ class UsersController < ApplicationController
     end
     
     def show
-        #return redirect_to root_path unless logged_in?
+        
           @user = User.find_by(id: params[:id]) 
           
     end
 
     def edit
-        @user = User.find(params[:id])
+        @user = current_user
+        
     end
     
     def update
-        @user = User.find(params[:id])
-        @user.update(title: params[:user][:email], description: params[:user][:favorite_wine])
+        @user = current_user
+             
+        @user.update(email: params[:user][:email], favorite_wine: params[:user][:favorite_wine])
         redirect_to user_path(@user)
+         
     end
 
     def user_params
