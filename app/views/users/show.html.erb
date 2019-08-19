@@ -1,4 +1,9 @@
 <div >
     <p>Username: <%= @user.username %></p>
+    
     <p>Favorite Wine: <%= @user.favorite_wine %></p>    
+</div>
+
+<div>
+<p> Need edit button <%= link_to "edit user", edit_user_path(@user) %> </p>
 </div>
