@@ -32,13 +32,13 @@ class UsersController < ApplicationController
     def update
         @user = current_user
              
-        @user.update(email: params[:user][:email], favorite_wine: params[:user][:favorite_wine])
+        @user.update(email: params[:user][:email], concentration: params[:user][:concentration])
         redirect_to user_path(@user)
          
     end
 
     def user_params
-        params.require(:user).permit([:username, :password, :email, :favorite_wine])
+        params.require(:user).permit([:username, :password, :email, :concentration])
         #all attrib must be here or they won't be saved
     end
 end 
