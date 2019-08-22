@@ -17,5 +17,5 @@ class ApplicationController < ActionController::Base
     def user_not_logged_in
         redirect_to signin_path if !current_user
     end 
-end
+
 end
